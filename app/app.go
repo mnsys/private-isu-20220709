@@ -21,6 +21,7 @@ import (
 	"github.com/go-chi/chi/v5"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/gorilla/sessions"
+	"github.com/hirosuzuki/go-sql-logger/pprofiler"
 	"github.com/jmoiron/sqlx"
 )
 
@@ -67,6 +68,7 @@ type Comment struct {
 }
 
 func init() {
+
 	memdAddr := os.Getenv("ISUCONP_MEMCACHED_ADDRESS")
 	if memdAddr == "" {
 		memdAddr = "localhost:11211"
@@ -261,6 +263,7 @@ func getTemplPath(filename string) string {
 }
 
 func getInitialize(w http.ResponseWriter, r *http.Request) {
+	pprofiler.Start(70)
 	dbInitialize()
 	w.WriteHeader(http.StatusOK)
 }
@@ -823,7 +826,8 @@ func main() {
 		dbname,
 	)
 
-	db, err = sqlx.Open("mysql", dsn)
+	// db, err = sqlx.Open("mysql", dsn)
+	db, err = sqlx.Open("mysql"+os.Getenv("MYSQL_DRIVER_POSTFIX"), dsn)
 	if err != nil {
 		log.Fatalf("Failed to connect to DB: %s.", err.Error())
 	}

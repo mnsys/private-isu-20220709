@@ -7,6 +7,9 @@ WorkingDirectory=/home/isucon/private_isu/webapp/golang
 EnvironmentFile=/home/isucon/env.sh
 Environment=RACK_ENV=production
 PIDFile=/home/isucon/private_isu/webapp/golang/server.pid
+Environment=MYSQL_DRIVER_POSTFIX=:logger
+Environment=SQL_LOGFILE=/tmp/sql.log
+Environment=CPU_PROFILE_FILE=/tmp/cpu.pprof
 
 User=isucon
 Group=isucon
