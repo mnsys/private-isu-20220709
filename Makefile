@@ -31,6 +31,10 @@ deploy-web-3:
 	ssh ${HOST3} sudo nginx -t
 	ssh ${HOST3} sudo systemctl restart nginx
 
+deploy-db-3:
+	cat ./host3/mysqld.cnf | ssh ${HOST3} sudo tee /etc/mysql/mysql.conf.d/mysqld.cnf >/dev/null
+	ssh ${HOST3} sudo systemctl restart mysql
+
 host0:
 	ssh $(HOST0)
 
