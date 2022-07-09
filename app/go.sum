@@ -20,4 +20,5 @@ github.com/mattn/go-sqlite3 v1.14.6 h1:dNPt6NO46WmLVt2DLNpwczCmdV5boIZ6g/tlDrlRU
 github.com/mattn/go-sqlite3 v1.14.6/go.mod h1:NyWgC/yNuGj7Q9rpYnZvas74GogHl5/Z4A/KQRfk6bU=
 github.com/memcachier/mc v2.0.1+incompatible h1:s8EDz0xrJLP8goitwZOoq1vA/sm0fPS4X3KAF0nyhWQ=
 github.com/memcachier/mc v2.0.1+incompatible/go.mod h1:7bkvFE61leUBvXz+yxsOnGBQSZpBSPIMUQSmmSHvuXc=
+github.com/shogo82148/go-sql-proxy v0.5.0 h1:HVETX8Gdznfh5E3gF8sgacp7iXtcliDjmb7Kjj++pI0=
 github.com/shogo82148/go-sql-proxy v0.5.0/go.mod h1:48I3ZuQ9xim8OG+QpkcYLiRy4w6q/gjol/MwoTlSFrY=

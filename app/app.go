@@ -21,6 +21,7 @@ import (
 	"github.com/go-chi/chi/v5"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/gorilla/sessions"
+	_ "github.com/hirosuzuki/go-sql-logger"
 	"github.com/hirosuzuki/go-sql-logger/pprofiler"
 	"github.com/jmoiron/sqlx"
 )
