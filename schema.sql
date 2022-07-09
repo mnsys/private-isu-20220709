@@ -1,0 +1,1 @@
+CREATE INDEX comments_index1 ON comments (post_id, created_at desc);
