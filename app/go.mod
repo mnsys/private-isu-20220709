@@ -13,5 +13,7 @@ require (
 
 require (
 	github.com/gorilla/securecookie v1.1.1 // indirect
+	github.com/hirosuzuki/go-sql-logger v0.11.0 // indirect
 	github.com/memcachier/mc v2.0.1+incompatible // indirect
+	github.com/shogo82148/go-sql-proxy v0.5.0 // indirect
 )
