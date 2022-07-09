@@ -11,6 +11,21 @@ deploy-app-1:
 deploy-app-2:
 	$(MAKE) -C app deploy-app TARGET=$(HOST2)
 
+deploy-web-all:
+	@make deploy-web-1
+	@make deploy-web-2
+	@make deploy-web-3
+
+deploy-web-1:
+	cat ./host1/nginx.conf | ssh ${HOST1} sudo tee /etc/nginx/nginx.conf >/dev/null
+	ssh ${HOST1} sudo nginx -t
+	ssh ${HOST1} sudo systemctl restart nginx
+
+deploy-web-2:
+	cat ./host2/nginx.conf | ssh ${HOST2} sudo tee /etc/nginx/nginx.conf >/dev/null
+	ssh ${HOST2} sudo nginx -t
+	ssh ${HOST2} sudo systemctl restart nginx
+
 deploy-web-3:
 	cat ./host3/nginx.conf | ssh ${HOST3} sudo tee /etc/nginx/nginx.conf >/dev/null
 	ssh ${HOST3} sudo nginx -t
